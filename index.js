@@ -11,6 +11,8 @@ let submit = () => {
   document.getElementById("txt-array").innerHTML = `[${numberArr}]`;
   // Câu 1 & 2
   tinhTongSoDuong();
+  // Câu 3
+  timSoDuongNhoNhat();
 };
 
 // Tính tổng số dương và đếm số dương
@@ -32,5 +34,17 @@ let tinhTongSoDuong = () => {
   ).innerHTML = `Số lượng số dương: ${demSoDuong}`;
 };
 
-// Tìm số nhỏ nhất trong mảng
-let timSoDuongNhoNhat = () => {};
+// Tìm số dương nhỏ nhất trong mảng
+let timSoDuongNhoNhat = () => {
+  let min = numberArr[0];
+  numberArr.forEach((item) => {
+    if (item < min && item > 0) {
+      min = item;
+    }
+  });
+
+  // Xuất kết quả
+  document.getElementById(
+    "txt-so-duong-nho-nhat"
+  ).innerHTML = `Số dương nhỏ nhất: ${min}`;
+};
